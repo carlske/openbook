@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Base background -->
+  <rect width="800" height="600" fill="hsla(270, 100%, 97%, 1)"/>
+  
+  <!-- Horizontal notebook lines -->
+  <g stroke="hsla(173, 70%, 35%, 1)" stroke-width="1" opacity="0.7">
+    <line x1="0" y1="30" x2="800" y2="30"/>
+    <line x1="0" y1="60" x2="800" y2="60"/>
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="120" x2="800" y2="120"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="210" x2="800" y2="210"/>
+    <line x1="0" y1="240" x2="800" y2="240"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="330" x2="800" y2="330"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="0" y1="390" x2="800" y2="390"/>
+    <line x1="0" y1="420" x2="800" y2="420"/>
+    <line x1="0" y1="450" x2="800" y2="450"/>
+    <line x1="0" y1="480" x2="800" y2="480"/>
+    <line x1="0" y1="510" x2="800" y2="510"/>
+    <line x1="0" y1="540" x2="800" y2="540"/>
+    <line x1="0" y1="570" x2="800" y2="570"/>
+  </g>
+  
+  <!-- Vertical margin line -->
+  <line x1="60" y1="0" x2="60" y2="600" stroke="hsla(251, 10%, 42%, 1)" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Top header line -->
+  <line x1="0" y1="30" x2="800" y2="30" stroke="hsla(251, 10%, 42%, 1)" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Vertical dotted line for binding -->
+  <g stroke="hsla(266, 67%, 88%, 1)" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.8">
+    <line x1="20" y1="0" x2="20" y2="600"/>
+  </g>
+  
+  <!-- Subtle decoration lines -->
+  <g stroke="hsla(266, 67%, 88%, 1)" stroke-width="0.5" opacity="0.6">
+    <line x1="0" y1="0" x2="800" y2="0"/>
+    <line x1="0" y1="600" x2="800" y2="600"/>
+  </g>
+  
+  <!-- Subtle vertical guidelines -->
+  <g stroke="hsla(266, 67%, 88%, 1)" stroke-width="0.5" opacity="0.3">
+    <line x1="200" y1="30" x2="200" y2="600"/>
+    <line x1="400" y1="30" x2="400" y2="600"/>
+    <line x1="600" y1="30" x2="600" y2="600"/>
+  </g>
+  
+  <!-- Header section subtle highlight -->
+  <rect x="0" y="0" width="800" height="30" fill="hsla(266, 67%, 88%, 1)" opacity="0.05"/>
+  
+  <!-- Punch holes -->
+  <circle cx="20" cy="60" r="6" fill="hsla(270, 100%, 97%, 1)" stroke="hsla(251, 10%, 42%, 1)" stroke-width="1"/>
+  <circle cx="20" cy="150" r="6" fill="hsla(270, 100%, 97%, 1)" stroke="hsla(251, 10%, 42%, 1)" stroke-width="1"/>
+  <circle cx="20" cy="240" r="6" fill="hsla(270, 100%, 97%, 1)" stroke="hsla(251, 10%, 42%, 1)" stroke-width="1"/>
+  <circle cx="20" cy="330" r="6" fill="hsla(270, 100%, 97%, 1)" stroke="hsla(251, 10%, 42%, 1)" stroke-width="1"/>
+  <circle cx="20" cy="420" r="6" fill="hsla(270, 100%, 97%, 1)" stroke="hsla(251, 10%, 42%, 1)" stroke-width="1"/>
+  <circle cx="20" cy="510" r="6" fill="hsla(270, 100%, 97%, 1)" stroke="hsla(251, 10%, 42%, 1)" stroke-width="1"/>
+</svg>

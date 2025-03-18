@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Base background -->
+  <rect width="800" height="600" fill="hsla(270, 100%, 97%, 1)"/>
+  
+  <!-- Horizontal lines pattern -->
+  <g opacity="0.7">
+    <!-- Teal lines (hsla(173, 70%, 35%, 1)) -->
+    <line x1="0" y1="50" x2="800" y2="50" stroke="hsla(173, 70%, 35%, 1)" stroke-width="3"/>
+    <line x1="0" y1="170" x2="800" y2="170" stroke="hsla(173, 70%, 35%, 1)" stroke-width="2"/>
+    <line x1="0" y1="290" x2="800" y2="290" stroke="hsla(173, 70%, 35%, 1)" stroke-width="4"/>
+    <line x1="0" y1="410" x2="800" y2="410" stroke="hsla(173, 70%, 35%, 1)" stroke-width="2"/>
+    <line x1="0" y1="530" x2="800" y2="530" stroke="hsla(173, 70%, 35%, 1)" stroke-width="3"/>
+    
+    <!-- Light purple lines (hsla(266, 67%, 88%, 1)) -->
+    <line x1="0" y1="90" x2="800" y2="90" stroke="hsla(266, 67%, 88%, 1)" stroke-width="4"/>
+    <line x1="0" y1="210" x2="800" y2="210" stroke="hsla(266, 67%, 88%, 1)" stroke-width="3"/>
+    <line x1="0" y1="330" x2="800" y2="330" stroke="hsla(266, 67%, 88%, 1)" stroke-width="2"/>
+    <line x1="0" y1="450" x2="800" y2="450" stroke="hsla(266, 67%, 88%, 1)" stroke-width="5"/>
+    <line x1="0" y1="570" x2="800" y2="570" stroke="hsla(266, 67%, 88%, 1)" stroke-width="3"/>
+    
+    <!-- Dark purple-gray lines (hsla(251, 10%, 42%, 1)) -->
+    <line x1="0" y1="10" x2="800" y2="10" stroke="hsla(251, 10%, 42%, 1)" stroke-width="2"/>
+    <line x1="0" y1="130" x2="800" y2="130" stroke="hsla(251, 10%, 42%, 1)" stroke-width="3"/>
+    <line x1="0" y1="250" x2="800" y2="250" stroke="hsla(251, 10%, 42%, 1)" stroke-width="1"/>
+    <line x1="0" y1="370" x2="800" y2="370" stroke="hsla(251, 10%, 42%, 1)" stroke-width="4"/>
+    <line x1="0" y1="490" x2="800" y2="490" stroke="hsla(251, 10%, 42%, 1)" stroke-width="2"/>
+  </g>
+  
+  <!-- Vertical lines pattern -->
+  <g opacity="0.7">
+    <!-- Teal lines (hsla(173, 70%, 35%, 1)) -->
+    <line x1="50" y1="0" x2="50" y2="600" stroke="hsla(173, 70%, 35%, 1)" stroke-width="2"/>
+    <line x1="250" y1="0" x2="250" y2="600" stroke="hsla(173, 70%, 35%, 1)" stroke-width="3"/>
+    <line x1="450" y1="0" x2="450" y2="600" stroke="hsla(173, 70%, 35%, 1)" stroke-width="1"/>
+    <line x1="650" y1="0" x2="650" y2="600" stroke="hsla(173, 70%, 35%, 1)" stroke-width="3"/>
+    
+    <!-- Light purple lines (hsla(266, 67%, 88%, 1)) -->
+    <line x1="100" y1="0" x2="100" y2="600" stroke="hsla(266, 67%, 88%, 1)" stroke-width="4"/>
+    <line x1="300" y1="0" x2="300" y2="600" stroke="hsla(266, 67%, 88%, 1)" stroke-width="2"/>
+    <line x1="500" y1="0" x2="500" y2="600" stroke="hsla(266, 67%, 88%, 1)" stroke-width="3"/>
+    <line x1="700" y1="0" x2="700" y2="600" stroke="hsla(266, 67%, 88%, 1)" stroke-width="1"/>
+    
+    <!-- Dark purple-gray lines (hsla(251, 10%, 42%, 1)) -->
+    <line x1="150" y1="0" x2="150" y2="600" stroke="hsla(251, 10%, 42%, 1)" stroke-width="1"/>
+    <line x1="350" y1="0" x2="350" y2="600" stroke="hsla(251, 10%, 42%, 1)" stroke-width="3"/>
+    <line x1="550" y1="0" x2="550" y2="600" stroke="hsla(251, 10%, 42%, 1)" stroke-width="2"/>
+    <line x1="750" y1="0" x2="750" y2="600" stroke="hsla(251, 10%, 42%, 1)" stroke-width="3"/>
+  </g>
+  
+  <!-- Diagonal lines for added interest -->
+  <g opacity="0.3">
+    <!-- Teal diagonal lines -->
+    <line x1="0" y1="0" x2="800" y2="600" stroke="hsla(173, 70%, 35%, 1)" stroke-width="2"/>
+    <line x1="200" y1="0" x2="800" y2="450" stroke="hsla(173, 70%, 35%, 1)" stroke-width="3"/>
+    
+    <!-- Light purple diagonal lines -->
+    <line x1="0" y1="200" x2="600" y2="600" stroke="hsla(266, 67%, 88%, 1)" stroke-width="3"/>
+    <line x1="0" y1="400" x2="400" y2="600" stroke="hsla(266, 67%, 88%, 1)" stroke-width="2"/>
+    
+    <!-- Dark purple-gray diagonal lines -->
+    <line x1="800" y1="0" x2="0" y2="600" stroke="hsla(251, 10%, 42%, 1)" stroke-width="2"/>
+    <line x1="600" y1="0" x2="0" y2="450" stroke="hsla(251, 10%, 42%, 1)" stroke-width="3"/>
+  </g>
+</svg>

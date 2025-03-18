@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,700;1,700&family=Tangerine:wght@400;700&display=swap');
+
+
+:root {
+    --persian-green: hsla(173, 70%, 35%, 1);
+    --magnolia: hsla(270, 100%, 97%, 1);
+    --thistle: hsla(266, 67%, 88%, 1);
+    --dim-gray: hsla(251, 10%, 42%, 1);
+    --davys-gray: hsla(280, 6%, 32%, 1);
+    --persian-ligth-green: #8eb0ae;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans";
+    background: var(--magnolia);
+}
+

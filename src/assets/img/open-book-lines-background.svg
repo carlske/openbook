@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Base background color -->
+  <rect width="800" height="600" fill="hsla(270, 100%, 97%, 1)"/>
+  
+  <!-- Book spine/center fold -->
+  <line x1="400" y1="0" x2="400" y2="600" stroke="hsla(251, 10%, 42%, 1)" stroke-width="3"/>
+  <path d="M 370,0 Q 400,20 430,0" stroke="hsla(251, 10%, 42%, 1)" stroke-width="1.5" fill="none"/>
+  <path d="M 370,600 Q 400,580 430,600" stroke="hsla(251, 10%, 42%, 1)" stroke-width="1.5" fill="none"/>
+  
+  <!-- Left page horizontal lines with curve -->
+  <g stroke="hsla(266, 67%, 88%, 1)" stroke-width="1">
+    <path d="M 0,40 Q 200,35 400,40" fill="none"/>
+    <path d="M 0,80 Q 200,75 400,80" fill="none"/>
+    <path d="M 0,120 Q 200,115 400,120" fill="none"/>
+    <path d="M 0,160 Q 200,155 400,160" fill="none"/>
+    <path d="M 0,200 Q 200,195 400,200" fill="none"/>
+    <path d="M 0,240 Q 200,235 400,240" fill="none"/>
+    <path d="M 0,280 Q 200,275 400,280" fill="none"/>
+    <path d="M 0,320 Q 200,315 400,320" fill="none"/>
+    <path d="M 0,360 Q 200,355 400,360" fill="none"/>
+    <path d="M 0,400 Q 200,395 400,400" fill="none"/>
+    <path d="M 0,440 Q 200,435 400,440" fill="none"/>
+    <path d="M 0,480 Q 200,475 400,480" fill="none"/>
+    <path d="M 0,520 Q 200,515 400,520" fill="none"/>
+    <path d="M 0,560 Q 200,555 400,560" fill="none"/>
+  </g>
+  
+  <!-- Right page horizontal lines with curve -->
+  <g stroke="hsla(266, 67%, 88%, 1)" stroke-width="1">
+    <path d="M 400,40 Q 600,35 800,40" fill="none"/>
+    <path d="M 400,80 Q 600,75 800,80" fill="none"/>
+    <path d="M 400,120 Q 600,115 800,120" fill="none"/>
+    <path d="M 400,160 Q 600,155 800,160" fill="none"/>
+    <path d="M 400,200 Q 600,195 800,200" fill="none"/>
+    <path d="M 400,240 Q 600,235 800,240" fill="none"/>
+    <path d="M 400,280 Q 600,275 800,280" fill="none"/>
+    <path d="M 400,320 Q 600,315 800,320" fill="none"/>
+    <path d="M 400,360 Q 600,355 800,360" fill="none"/>
+    <path d="M 400,400 Q 600,395 800,400" fill="none"/>
+    <path d="M 400,440 Q 600,435 800,440" fill="none"/>
+    <path d="M 400,480 Q 600,475 800,480" fill="none"/>
+    <path d="M 400,520 Q 600,515 800,520" fill="none"/>
+    <path d="M 400,560 Q 600,555 800,560" fill="none"/>
+  </g>
+  
+  <!-- Page edges -->
+  <line x1="0" y1="0" x2="800" y2="0" stroke="hsla(251, 10%, 42%, 1)" stroke-width="2"/>
+  <line x1="0" y1="600" x2="800" y2="600" stroke="hsla(251, 10%, 42%, 1)" stroke-width="2"/>
+  
+  <!-- Decorative elements using teal -->
+  <rect x="5" y="5" width="10" height="590" fill="hsla(173, 70%, 35%, 1)" opacity="0.3"/>
+  <rect x="785" y="5" width="10" height="590" fill="hsla(173, 70%, 35%, 1)" opacity="0.3"/>
+  
+  <!-- Subtle page numbers in teal -->
+  <text x="30" y="580" fill="hsla(173, 70%, 35%, 1)" font-family="serif" font-size="14">1</text>
+  <text x="765" y="580" fill="hsla(173, 70%, 35%, 1)" font-family="serif" font-size="14">2</text>
+  
+  <!-- Light shadow effect -->
+  <rect x="385" y="0" width="30" height="600" fill="hsla(251, 10%, 42%, 1)" opacity="0.05"/>
+</svg>

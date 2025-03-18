@@ -1,0 +1,22 @@
+nav {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: var(--persian-green);
+  }
+  
+  a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+   a:hover {
+    background-color: var(--dim-gray);
+  }
+
+  a.active {
+    background-color: var(--dim-gray);
+  }
