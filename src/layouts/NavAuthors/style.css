@@ -2,6 +2,7 @@ nav {
     list-style-type: none;
     overflow: hidden;
     background-color: var(--persian-green);
+    text-transform: uppercase;
   }
   
   a {

@@ -33,7 +33,6 @@ function Home () {
                     <p className="text__description">Millions of books available through Controlled Digital Lending</p>
                 </div>
                 <img src={calendar} alt="book free books" />
-
             </div>
         </section>
         

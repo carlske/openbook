@@ -1,0 +1,51 @@
+.skeleton {
+    background-color: var(--thistle);
+    display: inline-block;
+    height: 2.5em;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skeleton__image{
+    height: 10rem;
+  }
+
+  .skeleton__name{
+    height: 40%;
+  }
+
+  .skeleton_author {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .skeleton_author div {
+    width: 45%;
+  }
+
+  .skeleton_description{
+    margin-top: 4px;
+  }
+  
+  .skeleton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(100deg, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%) ;
+    animation: skeleton-loading 1.5s infinite;
+  }
+  
+  @keyframes skeleton-loading {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  

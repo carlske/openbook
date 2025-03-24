@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Utils } from "../utils";
 
  function useFetch (url){
 
@@ -6,12 +7,13 @@ import { useState } from "react";
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    async function  fetchData (params = ""){       
+    async function  fetchData (){  
         setLoading(true)
         try {
-            const response = await fetch(`${url}${params}`);
+            const response = await fetch(`${url}`);
             const data = await response.json();
-            setData(data)
+            
+            setData(Utils.getDocs(data))
         } catch (error) {
             setError(error)
         }finally{
@@ -40,7 +42,7 @@ import { useState } from "react";
                 setData(data)
                 localStorage.setItem(cacheName,JSON.stringify(data))
             } catch (error) {
-                console.log(error)
+                console.error(error)
                 setError(error)
             }finally{
                 setLoading(false)

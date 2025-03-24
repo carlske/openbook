@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './style.css';
 
 export default function SerachComponent ({serchEvent}) {
 
@@ -8,8 +9,8 @@ export default function SerachComponent ({serchEvent}) {
     }
 
     return (
-        <div>
+        <section className="search__container">
             <input onInput={seachBook}></input>
-        </div>
+        </section>
     )
 }

@@ -1,37 +1,40 @@
 import { useEffect } from "react"
 import useFetch from "../../hooks/useFetch"
-import { BOOKURLAUTHORS, CACHE_MENU } from "../../utils/OpenBookConst"
 import useAuthors from "../../hooks/useAuthors";
-import Spinner from '../../components/Spinner'
 import './style.css'
 import { NavLink } from "react-router";
+import Skeleton from "../../components/Skeleton";
+import { Utils } from "../../utils";
 
 export default function NavAuthors() {
 
-    const { data, loading, error, fetchDataAndStorage } = useFetch(BOOKURLAUTHORS);
-    const { authors } = useAuthors({ loading, data })
 
-    useEffect(() => {
-        fetchDataAndStorage(CACHE_MENU)
-    }, []);
+
+    const renderNavList = () => {
+
+        const navList = []
+
+        navList.push(<NavLink to='/' key={0}>
+            HOME
+        </NavLink>);
+
+        const authorsLisks = Utils.getCategoriesNav().map((item, index) => (
+            <NavLink key={index + 1} to={`/category/${item}`}
+                className={({ isActive }) =>
+                    isActive ? "active" : ""
+                }>
+                {item}
+            </NavLink>
+        ))
+
+        navList.push(...authorsLisks)
+
+        return navList
+    }
 
     return (
         <nav>
-            {(loading) && <Spinner></Spinner>}
-            <NavLink to='/'>
-                HOME
-            </NavLink>
-            {(authors) && authors.map((item, index) => (
-                <NavLink key={index} to={`/author/${item}`}
-                    className={({ isActive }) =>
-                        isActive ? "active" : ""
-                    }>
-                    {item}
-                </NavLink>
-            ))}
-            <NavLink to='/search'>
-                SEARCH
-            </NavLink>
+            {renderNavList()}
         </nav>
     )
 

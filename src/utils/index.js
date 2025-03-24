@@ -1,15 +1,25 @@
+import { BOOK_URL, FIELDS_URL_CATEGORIES } from "./OpenBookConst"
+
 export class Utils {
+    static getCategoriesNav() {
+        return [
+            "running",
+            "animals",
+            "sky",
+            "music",
 
-    static getAuthorsName(params) {    
-        const {docs} = params;
-
-        let autorsList = new Set();
-
-        docs.forEach(element => {
-            autorsList.add(element.name.toUpperCase())
-        })
-
-        return [...autorsList].sort().splice(0,8) 
+        ]
     }
 
+    static getDocs(response) {
+        const {docs}= response
+        if(docs === undefined){
+            return null
+        }
+        return docs
+    }
+
+    static getUrlCategories(category) {
+        return `${BOOK_URL}search.json?q='${category}&${FIELDS_URL_CATEGORIES}`;
+    }
 }
