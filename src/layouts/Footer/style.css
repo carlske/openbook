@@ -1,9 +1,9 @@
 footer{
-    position: fixed;
-    bottom: 0;
+    position: relative;
     background: var(--persian-green);
     color: #fff;
-    width: 100%;
+    bottom: 0;
+    padding: 1em;
 }
 
 footer p {

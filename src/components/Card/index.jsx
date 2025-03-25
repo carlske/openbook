@@ -1,31 +1,29 @@
 import { BOOK_URL_IMAGE } from "../../utils/OpenBookConst"
 import './style.css';
+import cover from '../../assets/img/cover.webp'
+import ImageBook from "../ImageBook";
 
-export default function Card ({title,author, cover, pages, link}) {
+export default function Card({ title, author, cover, pages, link }) {
 
-    const getImage = (size) => {
-        return `${BOOK_URL_IMAGE}a/id/${cover}-${size}.jpg`
-    }
 
     return (
         <section className="card__container">
             <div className="container_image">
-                <img src={getImage("L")} alt={title}></img>
-            </div>
-            <div className="container__author">
-                <div className="author__name">
-                    <p>Author : {author} </p>
-                </div>
-                <div className="author__name">
-                    <p>Author : {author} </p>
-                </div>
+                <ImageBook cover={cover} desc={title} />
             </div>
             <div className="container__details">
-                <div className="details__name">
-                    <p>Pages : {pages} </p>
+                <div className="details__author">
+                    <div className="author__name">
+                        <p>Author : {author} </p>
+                    </div>
                 </div>
-                <div className="details__name">
-                    <a href={link}>Read </a>
+                <div className="details__books">
+                    <div className="books__pages">
+                        <p>Pages : {pages} </p>
+                    </div>
+                    <div className="books__link">
+                        <a href={link}>Read </a>
+                    </div>
                 </div>
             </div>
         </section>

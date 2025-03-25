@@ -23,6 +23,9 @@ export default function CategoryDetails() {
     }
 
     const showCardBooks = () => {
+        if(data === undefined){
+            return <p>Error {error}</p>
+        }
         return data.map((books, index) => {
             const { author_name, cover_i, title, editions } = books
             return <Card 

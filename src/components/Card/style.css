@@ -1,8 +1,29 @@
+
+
 .container_image{
     width: 100%;
-    height: 8rem;
+    height: 10em;
+    background: var(--thistle);
+    display: flex;
+    justify-content: center;
 }
 
-.container_image img{
-    width: 100%;
+.container__details{
+    background: var(--persian-ligth-green);
+    padding: 1em;
+    height: 6em;
+    color: var(--magnolia);
+}
+
+.details__books{
+    display: flex;
+    justify-content: space-between;
+}
+
+.books__link a{ 
+    background: var(--dim-gray);
+}
+
+.books__link a:hover{ 
+    background: var(--davys-gray);
 }
