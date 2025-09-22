@@ -1,0 +1,98 @@
+{
+  "folders": [
+    {
+      "name": "OpenBook",
+      "path": ".",
+    },
+  ],
+  "settings": {
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "typescript.suggest.autoImports": true,
+    "editor.linkedEditing": true,
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact",
+      "typescript": "typescriptreact",
+    },
+    "files.associations": {
+      "*.css": "tailwindcss",
+    },
+    "tailwindCSS.experimental.classRegex": [
+      ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+      ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ],
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/.next": true,
+      "**/dist": true,
+      "**/.turbo": true,
+      "**/pnpm-lock.yaml": true,
+    },
+    "files.exclude": {
+      "**/.next": true,
+      "**/.turbo": true,
+      "**/node_modules": true,
+    },
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "bradlc.vscode-tailwindcss",
+      "ms-vscode.vscode-typescript-next",
+      "dsznajder.es7-react-js-snippets",
+      "GitHub.copilot",
+      "GitHub.copilot-chat",
+    ],
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "dev",
+        "type": "shell",
+        "command": "pnpm dev",
+        "group": {
+          "kind": "build",
+          "isDefault": true,
+        },
+        "isBackground": true,
+        "problemMatcher": {
+          "owner": "next",
+          "pattern": {
+            "regexp": "^(.*):(\\d+):(\\d+): (error|warning|info): (.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5,
+          },
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "^.*Starting.*",
+            "endsPattern": "^.*Ready in.*",
+          },
+        },
+      },
+      {
+        "label": "build",
+        "type": "shell",
+        "command": "pnpm build",
+        "group": "build",
+        "problemMatcher": "$tsc",
+      },
+      {
+        "label": "lint",
+        "type": "shell",
+        "command": "pnpm lint",
+        "group": "test",
+        "problemMatcher": "$eslint-stylish",
+      },
+      {
+        "label": "lint:fix",
+        "type": "shell",
+        "command": "pnpm lint --fix",
+        "group": "test",
+      },
+    ],
+  },
+}
