@@ -44,7 +44,7 @@ export interface OpenLibraryDocument {
   id_standard_ebooks?: string[];
 
   // Additional fields that may appear
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 // Specific work/book interface
@@ -175,5 +175,5 @@ export interface ApiResponse<T> {
 export interface ApiError {
   code: string;
   message: string;
-  details?: Record<string, any>;
+  details?: Record<string, unknown>;
 }

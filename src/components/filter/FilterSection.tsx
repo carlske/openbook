@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import { Funnel, X } from 'lucide-react';
-import Select from '../iu/Select';
+import { useState } from 'react';
 import Button from '../iu/Buttons';
+import Select from '../iu/Select';
 import Slider from '../iu/Slider';
 
 const FilterSection = () => {
@@ -43,7 +43,22 @@ const FilterSection = () => {
       </section>
 
       {/* Overlay */}
-      {isSliderVisible && <div className="fixed inset-0 z-40 bg-black/50" onClick={() => setIsSliderVisible(false)} />}
+      {isSliderVisible && (
+        <div
+          className="fixed inset-0 z-40 bg-black/50"
+          onClick={() => {
+            return setIsSliderVisible(false);
+          }}
+          onKeyDown={e => {
+            if (e.key === 'Escape') {
+              setIsSliderVisible(false);
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Close filter panel"
+        />
+      )}
 
       {/* Vertical Slider Panel from Left */}
       <div
@@ -55,7 +70,9 @@ const FilterSection = () => {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Filters</h3>
             <Button
               variant="secondary"
-              onClick={() => setIsSliderVisible(false)}
+              onClick={() => {
+                return setIsSliderVisible(false);
+              }}
               className="p-2 text-gray-500 hover:text-gray-700"
             >
               <X size={20} />

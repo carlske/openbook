@@ -110,6 +110,17 @@ const eslintConfig = [
       'spaced-comment': 'warn',
     },
   },
+  {
+    ignores: [
+      '.next/**/*',
+      'node_modules/**/*',
+      'dist/**/*',
+      'build/**/*',
+      '*.config.js',
+      '*.config.mjs',
+      '*.config.ts',
+    ],
+  },
 ];
 
 export default eslintConfig;

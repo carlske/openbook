@@ -1,7 +1,7 @@
+import Image from 'next/image';
+import type { BookCardData } from '@/lib/types/cardTypes';
 import { Card } from '../iu/Card';
 import BookCover from './BookCover';
-import Image from 'next/image';
-import { BookCardData } from '@/lib/types/cardTypes';
 
 interface BookCardProps {
   book: BookCardData;
@@ -23,7 +23,7 @@ const BookCard = ({ book, language }: BookCardProps) => {
             <span>by</span> {book.author_name}
           </p>
         )}
-        <div className="my-2 w-full border-b border-gray-200/50"></div>
+        <div className="my-2 w-full border-b border-gray-200/50" />
         {language && <p className="text-sm text-black dark:text-white">Languages: {language.join(', ')}</p>}
       </div>
     </Card>

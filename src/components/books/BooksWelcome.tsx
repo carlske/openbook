@@ -5,8 +5,7 @@ const BooksWelcome = async () => {
   try {
     const data = await fetchBooks('running');
     return <BooksGrid {...data} />;
-  } catch (error) {
-    console.error('Error fetching books:', { cause: error });
+  } catch {
     return <div>Error loading books</div>;
   }
 };

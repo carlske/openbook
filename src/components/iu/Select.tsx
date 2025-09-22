@@ -1,6 +1,6 @@
-import { cn } from '@/lib/cn';
 import * as Ariakit from '@ariakit/react';
-import { ChevronDown, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
+import { cn } from '@/lib/cn';
 import Spinner from './Spinner';
 
 type SelectProps = {
@@ -9,7 +9,7 @@ type SelectProps = {
   defaultValue?: string;
 };
 
-const Select = ({ className, label = 'Favorite fruit', defaultValue = 'Apple' }: SelectProps) => {
+const Select = ({ className }: SelectProps) => {
   return (
     <div className={cn('space-y-2', className)}>
       <Ariakit.SelectProvider>

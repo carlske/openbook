@@ -1,7 +1,7 @@
 'use client';
 
-import { cn } from '@/lib/cn';
 import { useState } from 'react';
+import { cn } from '@/lib/cn';
 
 type SliderProps = {
   className?: string;
