@@ -1,9 +1,13 @@
 import { fetchBooks } from '@/adapters/openlibraryApi';
 import BooksGrid from './BooksGrid';
 
-const BooksWelcome = async () => {
+interface BooksWelcomeProps {
+  query: string;
+}
+
+const BooksWelcome = async ({ query }: BooksWelcomeProps) => {
   try {
-    const data = await fetchBooks('running');
+    const data = await fetchBooks(query);
     return <BooksGrid {...data} />;
   } catch {
     return <div>Error loading books</div>;

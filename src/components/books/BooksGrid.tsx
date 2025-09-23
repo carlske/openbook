@@ -16,9 +16,9 @@ export default function BooksGrid({ docs }: OpenLibrarySearchResponse) {
   return (
     <div className="flex justify-center">
       <div className="grid grid-cols-1 gap-6 p-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-        {docs.map((b, i) => {return (
-          <BookCard key={`${i}-book-${b.title}`} book={createBook(b)} language={b.language} />
-        )})}
+        {docs.map((b, i) => {
+          return <BookCard key={`${i}-book-${b.title}`} book={createBook(b)} language={b.language} />;
+        })}
       </div>
     </div>
   );

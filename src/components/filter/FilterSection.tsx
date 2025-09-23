@@ -25,7 +25,7 @@ const FilterSection = () => {
   return (
     <>
       <section>
-        <header className="flex items-center justify-between bg-gray-400/20 p-2">
+        <header className="flex items-center justify-between p-2">
           <Button variant="secondary" className="text-black dark:text-white" onClick={showSlider}>
             Filters ({activeFilters})
             <Funnel className="hover:text-secundary inline" />
@@ -45,7 +45,7 @@ const FilterSection = () => {
       {/* Overlay */}
       {isSliderVisible && (
         <div
-          className="fixed inset-0 z-40 bg-black/50"
+          className="fixed inset-0 z-40"
           onClick={() => {
             return setIsSliderVisible(false);
           }}

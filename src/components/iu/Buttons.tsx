@@ -33,7 +33,7 @@ export default function Button({
         'focus-visible:outline-primary cursor-pointer rounded-md border-2 px-4 py-2 -outline-offset-1 focus-visible:outline-2',
         variant === 'primary'
           ? 'bg-primary border-primary enabled:hover:bg-primary-dark disabled:bg-primary-darker text-white'
-          : 'dark:border-primary disabled:bg-divider dark:enabled:hover:bg-card-dark enabled:hover:bg-card disabled:dark:bg-divider-dark border-black bg-white text-black dark:bg-black dark:text-white',
+          : 'disabled:bg-divider dark:enabled:hover:bg-card-dark enabled:hover:bg-card disabled:dark:bg-divider-dark border-black bg-white text-black dark:border-white dark:bg-black dark:text-white',
         className,
       )}
       {...otherProps}

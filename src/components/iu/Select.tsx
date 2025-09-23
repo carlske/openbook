@@ -17,7 +17,7 @@ const Select = ({ className }: SelectProps) => {
           <Ariakit.Select
             className={cn(
               'group peer inline-flex w-full items-center justify-between gap-2',
-              'dark:border-primary rounded-lg border-2 border-black bg-white px-3 py-2 text-sm shadow-sm dark:bg-black',
+              'rounded-lg border-2 border-black bg-white px-3 py-2 text-sm shadow-sm dark:border-white dark:bg-black',
 
               'transition-[box-shadow,transform,background-color,border-color]',
               'hover:dark:bg-secundary hover:bg-gray-500 hover:text-white active:scale-[.99]',
@@ -58,7 +58,7 @@ function SelectItem({ value }: { value: string }) {
       className={cn(
         'relative flex w-full cursor-pointer items-center gap-2 rounded-md px-2 py-1.5 text-sm select-none',
         'outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-blue-300',
-        'hover:bg-secundary hover:text-white data-[active]:bg-neutral-100 hover:dark:text-black',
+        'hover:bg-secundary hover:text-white data-[active]:bg-neutral-100',
         'aria-selected:text-secundary aria-selected:bg-blue-50',
       )}
     >
