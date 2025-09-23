@@ -11,8 +11,7 @@
   --dark-cyan: hsla(176, 94%, 28%, 1);
   --black: hsla(0, 0%, 3%, 1);
   --emerald: hsla(164, 95%, 43%, 1);
-  --banner: rgb(255, 162, 0);
-
+  --banner: #fac05e;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);

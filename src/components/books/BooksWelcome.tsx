@@ -6,6 +6,9 @@ interface BooksWelcomeProps {
 }
 
 const BooksWelcome = async ({ query }: BooksWelcomeProps) => {
+  if (!query) {
+    query = 'running';
+  }
   try {
     const data = await fetchBooks(query);
     return <BooksGrid {...data} />;
