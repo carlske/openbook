@@ -6,7 +6,7 @@ import FilterSection from '@/components/filter/FilterSection';
 import Header from '@/components/layout/Header';
 
 interface HomeProps {
-  searchParams?: { [key: string]: string | undefined };
+  searchParams?: Promise<{ [key: string]: string | undefined }>;
 }
 
 export default async function Home({ searchParams }: HomeProps) {
