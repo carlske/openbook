@@ -32,7 +32,7 @@ export default async function Home({ searchParams }: HomeProps) {
             }
           >
             <ViewTransition key={query} enter="slide-up" exit="slide-down" default="none">
-              <BooksWelcome query={query} />
+              <BooksWelcome query={query} currentPage={currentPage} />
             </ViewTransition>
           </Suspense>
         </div>

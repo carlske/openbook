@@ -15,3 +15,8 @@ export type SelectProps = {
   variant?: 'primary' | 'secondary';
   onSelect?: (items: SelectItem[]) => void;
 };
+
+export interface FetchBooksProps {
+  query: string;
+  currentPage?: number;
+}
