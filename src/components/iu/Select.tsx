@@ -2,18 +2,14 @@ import * as Ariakit from '@ariakit/react';
 import { Check } from 'lucide-react';
 import { cn } from '@/lib/cn';
 import Spinner from './Spinner';
+import { SelectProps } from '@/lib/types/select';
 
-type SelectProps = {
-  className?: string;
-  label?: string;
-  defaultValue?: string;
-};
-
-const Select = ({ className }: SelectProps) => {
+const Select = ({ className, label, options, hideSpinner, isPending }: SelectProps) => {
   return (
     <div className={cn('space-y-2', className)}>
       <Ariakit.SelectProvider>
         <div className="relative w-56">
+          <Ariakit.SelectLabel className="mb-2 font-bold uppercase">{label}</Ariakit.SelectLabel>
           <Ariakit.Select
             className={cn(
               'group peer inline-flex w-full items-center justify-between gap-2',
@@ -25,7 +21,7 @@ const Select = ({ className }: SelectProps) => {
               'dark:data-[open]:accent-accent data-[open]:ring-2',
             )}
           >
-            <Spinner className={'text-black dark:text-white'} width={16} height={16} />
+            {isPending && !hideSpinner && <Spinner className={'text-black dark:text-white'} width={16} height={16} />}
 
             <Ariakit.SelectValue />
             <Ariakit.SelectArrow className="flex-shrink-0 transition-transform group-aria-expanded:rotate-180" />
@@ -41,10 +37,7 @@ const Select = ({ className }: SelectProps) => {
             'data-[leave]:animate-[fade-out_100ms_ease-in]',
           )}
         >
-          <SelectItem value="Apple" />
-          <SelectItem value="Banana" />
-          <SelectItem value="Grape" />
-          <SelectItem value="Orange" />
+          {options && options?.map(option => <SelectItem key={option.value} value={option.value} />)}
         </Ariakit.SelectPopover>
       </Ariakit.SelectProvider>
     </div>

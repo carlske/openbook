@@ -1,5 +1,6 @@
 import { fetchBooks } from '@/adapters/openlibraryApi';
 import BooksGrid from './BooksGrid';
+import ErrorPage from '../iu/ErrorPage';
 
 interface BooksWelcomeProps {
   query: string;
@@ -11,9 +12,15 @@ const BooksWelcome = async ({ query }: BooksWelcomeProps) => {
   }
   try {
     const data = await fetchBooks(query);
-    return <BooksGrid {...data} />;
+    const { numFound } = data;
+
+    return (
+      <>
+        <BooksGrid {...data} totalPages={numFound} />
+      </>
+    );
   } catch {
-    return <div>Error loading books</div>;
+    return <ErrorPage message="Failed to load books. Please try again later." />;
   }
 };
 

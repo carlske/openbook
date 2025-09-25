@@ -25,7 +25,7 @@ const FilterSection = () => {
   return (
     <>
       <section>
-        <header className="flex items-center justify-between p-2">
+        <header className="flex items-center justify-between p-2 dark:bg-gray-900">
           <Button variant="secondary" className="text-black dark:text-white" onClick={showSlider}>
             Filters ({activeFilters})
             <Funnel className="hover:text-secundary inline" />
