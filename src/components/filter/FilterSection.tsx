@@ -30,7 +30,6 @@ const FilterSection = () => {
             Filters ({activeFilters})
             <Funnel className="hover:text-secundary inline" />
           </Button>
-          <Select className="p-2" />
         </header>
 
         <div className="p-2">
