@@ -1,7 +1,7 @@
 import { fetchBooks } from '@/adapters/openlibraryApi';
-import BooksGrid from './BooksGrid';
+import type { FetchBooksProps } from '@/lib/types/select';
 import ErrorPage from '../iu/ErrorPage';
-import { FetchBooksProps } from '@/lib/types/select';
+import BooksGrid from './BooksGrid';
 
 interface BooksWelcomeProps {
   query: string;
@@ -14,7 +14,7 @@ const BooksWelcome = async ({ query, currentPage = 1 }: BooksWelcomeProps) => {
   }
 
   try {
-    const data = await fetchBooks({ query, currentPage } as FetchBooksProps);
+    const data = await fetchBooks({ currentPage, query } as FetchBooksProps);
     const { numFound } = data;
 
     return <BooksGrid {...data} totalPages={numFound} />;

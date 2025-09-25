@@ -1,4 +1,4 @@
-import { FetchBooksProps } from '@/lib/types/select';
+import type { FetchBooksProps } from '@/lib/types/select';
 
 const BASE = process.env.NEXT_PUBLIC_API_URL;
 

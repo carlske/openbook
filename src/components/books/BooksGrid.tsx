@@ -1,8 +1,8 @@
 import type { OpenLibraryDocument, OpenLibrarySearchResponse } from '@/lib/types/apiTypes';
 import type { BookCardData } from '@/lib/types/cardTypes';
+import Pagination from '../iu/Pagination';
 import BookCard from './BookCard';
 import BooksNotFound from './BooksNotFound';
-import Pagination from '../iu/Pagination';
 
 interface BooksGridProps extends OpenLibrarySearchResponse {
   totalPages: number;

@@ -1,6 +1,6 @@
-import Select from '../iu/Select';
 import { cn } from '@/lib/cn';
-import { SelectItem } from '@/lib/types/select';
+import type { SelectItem } from '@/lib/types/select';
+import Select from '../iu/Select';
 
 type FilterRouterProps = {
   selected: SelectItem[];

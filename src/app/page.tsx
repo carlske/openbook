@@ -1,9 +1,9 @@
 import { Suspense, unstable_ViewTransition as ViewTransition } from 'react';
-import BooksGridSkeleton from '@/components/books/skeleton/BooksGridSkeleton';
 import BooksWelcome from '@/components/books/BooksWelcome';
+import BooksGridSkeleton from '@/components/books/skeleton/BooksGridSkeleton';
+import Filter from '@/components/filter/Filter';
 import FilterSection from '@/components/filter/FilterSection';
 import Header from '@/components/layout/Header';
-import Filter from '@/components/filter/Filter';
 
 interface HomeProps {
   searchParams?: Promise<{ [key: string]: string | undefined }>;

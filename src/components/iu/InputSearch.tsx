@@ -1,8 +1,8 @@
 'use client';
-import useDebounce from '@/hooks/useDebounce';
 import clsx from 'clsx';
 import { Search } from 'lucide-react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import useDebounce from '@/hooks/useDebounce';
 
 const InputSearch = () => {
   const searchParams = useSearchParams();
@@ -33,7 +33,7 @@ const InputSearch = () => {
         placeholder="Search..."
         id="site-search"
         name="q"
-        onChange={e => handleSearch(e.target.value)}
+        onChange={e => {return handleSearch(e.target.value)}}
         defaultValue={searchParams.get('query')?.toString() ?? ''}
       />
 

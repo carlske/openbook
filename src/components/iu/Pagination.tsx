@@ -83,7 +83,7 @@ const Pagination = ({ totalPages }: PaginationProps) => {
         </>
       )}
 
-      {visiblePages.map(pageNumber => (
+      {visiblePages.map(pageNumber => {return (
         <Link
           key={pageNumber}
           href={createPageURL(pageNumber)}
@@ -95,7 +95,7 @@ const Pagination = ({ totalPages }: PaginationProps) => {
         >
           {pageNumber}
         </Link>
-      ))}
+      )})}
 
       {visiblePages[visiblePages.length - 1] < totalPages && (
         <>

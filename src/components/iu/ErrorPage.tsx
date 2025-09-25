@@ -1,5 +1,5 @@
-import { cn } from '@/lib/cn';
 import Image from 'next/image';
+import { cn } from '@/lib/cn';
 
 const ErrorPage = ({ message }: { message: string }) => {
   return (

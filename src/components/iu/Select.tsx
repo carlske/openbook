@@ -1,8 +1,8 @@
 import * as Ariakit from '@ariakit/react';
 import { Check } from 'lucide-react';
 import { cn } from '@/lib/cn';
+import type { SelectProps } from '@/lib/types/select';
 import Spinner from './Spinner';
-import { SelectProps } from '@/lib/types/select';
 
 const Select = ({ className, label, options, hideSpinner, isPending }: SelectProps) => {
   return (
@@ -37,7 +37,7 @@ const Select = ({ className, label, options, hideSpinner, isPending }: SelectPro
             'data-[leave]:animate-[fade-out_100ms_ease-in]',
           )}
         >
-          {options && options?.map(option => <SelectItem key={option.value} value={option.value} />)}
+          {options && options?.map(option => {return <SelectItem key={option.value} value={option.value} />})}
         </Ariakit.SelectPopover>
       </Ariakit.SelectProvider>
     </div>
