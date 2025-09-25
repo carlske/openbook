@@ -3,7 +3,6 @@
 import { Funnel, X } from 'lucide-react';
 import { useState } from 'react';
 import Button from '../iu/Buttons';
-import Select from '../iu/Select';
 import Slider from '../iu/Slider';
 
 const FilterSection = () => {
