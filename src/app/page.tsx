@@ -2,7 +2,6 @@ import { Suspense, unstable_ViewTransition as ViewTransition } from 'react';
 import BooksWelcome from '@/components/books/BooksWelcome';
 import BooksGridSkeleton from '@/components/books/skeleton/BooksGridSkeleton';
 import Filter from '@/components/filter/Filter';
-import FilterSection from '@/components/filter/FilterSection';
 import Header from '@/components/layout/Header';
 
 interface HomeProps {
@@ -18,9 +17,7 @@ export default async function Home({ searchParams }: HomeProps) {
     <div>
       <Header />
 
-      <FilterSection />
-
-      <main>
+      <main className="mt-10">
         <div className="grid gap-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-[300px_1fr] 2xl:grid-cols-[300px_1fr]">
           <Filter />
           <Suspense

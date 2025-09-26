@@ -99,6 +99,11 @@
     }
   }
 
+  .book_grid {
+    @apply w-full;
+    min-width: -webkit-fill-available;
+  }
+
   .animate-shimmer {
     animation: shimmer 2s infinite linear;
   }

@@ -20,7 +20,7 @@ export default function BooksGrid({ docs, totalPages }: BooksGridProps) {
   };
 
   return (
-    <div className="w-full">
+    <div className="book_grid">
       {docs && docs.length > 0 ? (
         <>
           <div className="grid grid-cols-1 justify-items-center gap-5 p-3 sm:grid-cols-3 sm:justify-items-stretch md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5">

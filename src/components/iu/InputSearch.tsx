@@ -33,7 +33,9 @@ const InputSearch = () => {
         placeholder="Search..."
         id="site-search"
         name="q"
-        onChange={e => {return handleSearch(e.target.value)}}
+        onChange={e => {
+          return handleSearch(e.target.value);
+        }}
         defaultValue={searchParams.get('query')?.toString() ?? ''}
       />
 
