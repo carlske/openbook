@@ -12,8 +12,6 @@ const Pagination = ({ totalPages }: PaginationProps) => {
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get('page')) || 1;
 
-  console.log({ currentPage, totalPages });
-
   const createPageURL = (pageNumber: number | string) => {
     const params = new URLSearchParams(searchParams);
     params.set('page', pageNumber.toString());
@@ -83,19 +81,21 @@ const Pagination = ({ totalPages }: PaginationProps) => {
         </>
       )}
 
-      {visiblePages.map(pageNumber => {return (
-        <Link
-          key={pageNumber}
-          href={createPageURL(pageNumber)}
-          className={`flex h-10 w-10 items-center justify-center rounded-md border-2 font-semibold transition-all ${
-            pageNumber === currentPage
-              ? 'border-black bg-black text-white shadow-[2px_2px_0_black] dark:border-white dark:bg-white dark:text-black dark:shadow-[2px_2px_0_white]'
-              : 'border-black bg-white text-black shadow-[2px_2px_0_black] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none dark:border-white dark:bg-gray-900 dark:text-white dark:shadow-[2px_2px_0_white]'
-          }`}
-        >
-          {pageNumber}
-        </Link>
-      )})}
+      {visiblePages.map(pageNumber => {
+        return (
+          <Link
+            key={pageNumber}
+            href={createPageURL(pageNumber)}
+            className={`flex h-10 w-10 items-center justify-center rounded-md border-2 font-semibold transition-all ${
+              pageNumber === currentPage
+                ? 'border-black bg-black text-white shadow-[2px_2px_0_black] dark:border-white dark:bg-white dark:text-black dark:shadow-[2px_2px_0_white]'
+                : 'border-black bg-white text-black shadow-[2px_2px_0_black] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none dark:border-white dark:bg-gray-900 dark:text-white dark:shadow-[2px_2px_0_white]'
+            }`}
+          >
+            {pageNumber}
+          </Link>
+        );
+      })}
 
       {visiblePages[visiblePages.length - 1] < totalPages && (
         <>

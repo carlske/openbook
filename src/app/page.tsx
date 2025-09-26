@@ -4,6 +4,7 @@ import BooksGridSkeleton from '@/components/books/skeleton/BooksGridSkeleton';
 import Filter from '@/components/filter/Filter';
 import Header from '@/components/layout/Header';
 
+
 interface HomeProps {
   searchParams?: Promise<{ [key: string]: string | undefined }>;
 }
@@ -16,7 +17,6 @@ export default async function Home({ searchParams }: HomeProps) {
   return (
     <div>
       <Header />
-
       <main className="mt-10">
         <div className="grid gap-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-[300px_1fr] 2xl:grid-cols-[300px_1fr]">
           <Filter />
