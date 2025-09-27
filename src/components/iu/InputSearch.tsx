@@ -4,7 +4,9 @@ import clsx from 'clsx';
 import { Search } from 'lucide-react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import { useEffect, useState } from 'react';
+import {  useEffect, useRef, useState } from 'react';
+import { fetchGetSearchSuggestions } from '@/adapters/openlibraryApi';
+import useDebounce from '@/hooks/useDebounce';
 
 interface InputSearchProps {
   onSearch?: (terms: string[]) => void;
@@ -13,42 +15,61 @@ interface InputSearchProps {
 const InputSearch = ({ onSearch }: InputSearchProps) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const debouncedValue = searchParams.get('query') || '';
   const { replace } = useRouter();
-  const [inputValue, setInputValue] = useState<string>('');
+  const [query, setQuery] = useState<string>(searchParams.get('query') || '');
+  const debouncedQuery = useDebounce(query, 300);
+  const debouncedSuggestions = useDebounce(query, 400);
+  const ctrlRef = useRef<AbortController | null>(null);
 
-  function handleSearch(term: string) {
-    const params = new URLSearchParams(debouncedValue);
+  const handleSearch = (term: string) => {
+    const params = new URLSearchParams(searchParams);
 
     if (term) {
       params.set('query', term);
     } else {
       params.delete('query');
     }
+
     replace(`${pathname}?${params.toString()}`);
-  }
+  };
 
   useEffect(() => {
-    const callApi = async () => {
-      const response = await fetch('/api/search-sugg', {
-        body: JSON.stringify({ search: inputValue }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-      });
+    handleSearch(debouncedQuery);
+  }, [debouncedQuery]);
 
-      const { suggestions } = await response.json();
-      if (onSearch) {
-        console.log('Suggestions received:', suggestions);
-        onSearch(suggestions);
-      }
+  useEffect(() => {
+    getIAsuggestions();
+
+    return () => {
+      ctrlRef.current?.abort();
     };
+  }, [debouncedSuggestions]);
 
-    if (inputValue) {
-      callApi();
+  const handleInputChange = (term: string) => {
+    setQuery(term);
+  };
+
+  const getIAsuggestions = async (): Promise<string[]> => {
+    if (!debouncedSuggestions.trim()) {
+      return Promise.resolve([]);
     }
-  }, [inputValue, onSearch]);
+
+    try {
+      const data = await fetchGetSearchSuggestions(debouncedSuggestions, ctrlRef);
+      if (data && onSearch) {
+        onSearch(data);
+      }
+
+      if (!data) {
+        return Promise.resolve([]);
+      }
+
+      return Promise.resolve(data);
+    } catch (error) {
+      console.error('Error fetching suggestions:', error);
+      return Promise.resolve([]);
+    }
+  };
 
   return (
     <div className="relative flex flex-1 flex-shrink-0">
@@ -63,11 +84,8 @@ const InputSearch = ({ onSearch }: InputSearchProps) => {
         placeholder="Search..."
         id="site-search"
         name="q"
-        onChange={e => {
-          setInputValue(e.target.value);
-          return handleSearch(e.target.value);
-        }}
-        value={inputValue}
+        onChange={e => {return handleInputChange(e.target.value)}}
+        value={query}
       />
 
       <Search className="peer-focus:dark:text-primary absolute top-1/2 left-3 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />

@@ -15,7 +15,9 @@ const SearchSuggChips = ({ className, sugg }: SearchSuggChipsProps) => {
   const pathname = usePathname();
 
   const handleChipClick = (id: string | number) => {
-    const label = results.find(result => {return result === id});
+    const label = results.find(result => {
+      return result === id;
+    });
     if (!label) return;
     const params = new URLSearchParams(searchParams);
     params.set('query', label);
@@ -23,10 +25,21 @@ const SearchSuggChips = ({ className, sugg }: SearchSuggChipsProps) => {
   };
 
   return (
-    <section className={`${cn('p-5', className)}`}>
-      {results.length > 0 && (
-        <Chips onChipClick={handleChipClick} chips={results.map(label => {return { id: label, label }})} />
+    <section
+      className={cn(
+        'overflow-hidden transition-all duration-300 ease-in-out',
+        results.length > 0 ? 'max-h-32 p-5' : 'max-h-0 p-0',
+        className,
       )}
+    >
+      <div className="opacity-100">
+        <Chips
+          onChipClick={handleChipClick}
+          chips={results.map(label => {
+            return { id: label, label };
+          })}
+        />
+      </div>
     </section>
   );
 };
