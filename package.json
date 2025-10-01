@@ -4,14 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "build:vercel": "next build",
+    "build": "prisma generate --schema=prisma/schema.local.prisma && next build --turbopack",
+    "build:vercel": "prisma generate --schema=prisma/schema.prod.prisma && next build",
+    "postinstall": "prisma generate --schema=prisma/schema.prod.prisma",
     "start": "next start",
     "lint": "eslint",
-    "db:push": "prisma db push",
-    "db:migrate": "prisma migrate dev",
-    "db:generate": "prisma generate",
-    "db:studio": "prisma studio"
+    "db:local:push": "dotenv -e .env.local -- prisma db push --schema=prisma/schema.local.prisma",
+    "db:local:migrate": "dotenv -e .env.local -- prisma migrate dev --schema=prisma/schema.local.prisma",
+    "db:local:studio": "dotenv -e .env.local -- prisma studio --schema=prisma/schema.local.prisma",
+    "db:local:generate": "dotenv -e .env.local -- prisma generate --schema=prisma/schema.local.prisma",
+    "db:prod:deploy": "dotenv -e .env.prod -- prisma migrate deploy --schema=prisma/schema.prod.prisma",
+    "db:prod:migrate": "dotenv -e .env.prod -- prisma migrate dev --schema=prisma/schema.prod.prisma",
+    "db:prod:studio": "dotenv -e .env.prod -- prisma studio --schema=prisma/schema.prod.prisma",
+    "db:prod:generate": "dotenv -e .env.prod -- prisma generate --schema=prisma/schema.prod.prisma"
   },
   "dependencies": {
     "@ai-sdk/google": "^2.0.16",
@@ -34,6 +39,7 @@
     "@typescript-eslint/parser": "^8.44.0",
     "babel-plugin-react-compiler": "19.1.0-rc.3",
     "clsx": "^2.1.1",
+    "dotenv-cli": "^10.0.0",
     "eslint": "^9.36.0",
     "eslint-config-next": "^15.5.3",
     "eslint-config-prettier": "^10.1.8",
