@@ -1,4 +1,4 @@
-export const markdownToJSON = (md: string) => {
+export const markdownToJSON = (md: string): Record<string, any> => {
   const text = md;
   try {
     const jsonMatch = text.match(/```json\s*([\s\S]*?)\s*```/);
@@ -8,6 +8,7 @@ export const markdownToJSON = (md: string) => {
       return JSON.parse(text);
     }
   } catch (parseError) {
-    return new Error('Failed to parse AI response', { cause: `${parseError}` });
+    console.error('Error parsing markdown to JSON:', parseError);
+    return {};
   }
 };

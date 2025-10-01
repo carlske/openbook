@@ -102,6 +102,12 @@ pnpm start
 # Lint and fix code
 pnpm lint
 pnpm lint --fix
+
+# Database operations with Prisma
+pnpm db:push      # Push schema changes without migration
+pnpm db:migrate   # Create and apply migrations
+pnpm db:generate  # Generate Prisma Client
+pnpm db:studio    # Open Prisma Studio (database GUI)
 ```
 
 ## 🏗️ Project Structure
