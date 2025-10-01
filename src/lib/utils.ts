@@ -1,4 +1,4 @@
-export const markdownToJSON = (md: string): Record<string, any> => {
+export const markdownToJSON = (md: string): Record<string, unknown> => {
   const text = md;
   try {
     const jsonMatch = text.match(/```json\s*([\s\S]*?)\s*```/);

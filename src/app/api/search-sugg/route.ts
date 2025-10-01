@@ -32,7 +32,7 @@ export async function POST(req: Request) {
       },
     });
 
-    const suggestions: Record<string, any> = markdownToJSON(text);
+    const suggestions: Record<string, unknown> = markdownToJSON(text);
 
     try {
       await saveSearchSuggestion({
