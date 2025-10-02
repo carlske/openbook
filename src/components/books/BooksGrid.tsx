@@ -1,8 +1,8 @@
 import type { OpenLibraryDocument, OpenLibrarySearchResponse } from '@/lib/types/apiTypes';
 import type { BookCardData } from '@/lib/types/cardTypes';
 import Pagination from '../iu/Pagination';
-import BookCard from './BookCard';
 import BooksNotFound from './BooksNotFound';
+import { BookCard } from './BookCard';
 
 interface BooksGridProps extends OpenLibrarySearchResponse {
   totalPages: number;
@@ -25,7 +25,15 @@ export default function BooksGrid({ docs, totalPages }: BooksGridProps) {
         <>
           <div className="grid grid-cols-1 justify-items-center gap-5 p-3 sm:grid-cols-3 sm:justify-items-stretch md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5">
             {docs.map((b, i) => {
-              return <BookCard key={`${i}-book-${b.title}`} book={createBook(b)} language={b.language} />;
+              return (
+                <BookCard key={`${i}-book-${b.title}`}>
+                  <BookCard.Container>
+                    <BookCard.Cover cover_i={b.cover_i} title={b.title} />
+                    <BookCard.Title title={b.title} />
+                    <BookCard.Author book={createBook(b)} />
+                  </BookCard.Container>
+                </BookCard>
+              );
             })}
           </div>
           <Pagination totalPages={totalPages} />
