@@ -2,26 +2,25 @@
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { cn } from '@/lib/cn';
 import Chips from '../iu/Chips';
+import useSearchQueryParams from '@/hooks/useSearchQueryParams';
 
 interface SearchSuggChipsProps {
   className?: string;
   sugg?: string[];
+  onClipClick?: (label: string) => string | void;
 }
 
-const SearchSuggChips = ({ className, sugg }: SearchSuggChipsProps) => {
+const SearchSuggChips = ({ className, sugg, onClipClick }: SearchSuggChipsProps) => {
+  const { updateQuery } = useSearchQueryParams();
   const results = sugg || [];
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
-
   const handleChipClick = (id: string | number) => {
     const label = results.find(result => {
       return result === id;
     });
     if (!label) return;
-    const params = new URLSearchParams(searchParams);
-    params.set('query', label);
-    router.push(`${pathname}?${params.toString()}`);
+
+    updateQuery(label);
+    return onClipClick ? onClipClick(label) : undefined;
   };
 
   return (

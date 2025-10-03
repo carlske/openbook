@@ -2,7 +2,7 @@ import { cn } from '@/lib/cn';
 import type { SelectItem } from '@/lib/types/select';
 import Select from '../iu/Select';
 
-type FilterRouterProps = {
+type FilterInputsRouterProps = {
   selected: SelectItem[];
   hideSpinner?: boolean;
   options: SelectItem[];
@@ -12,7 +12,7 @@ type FilterRouterProps = {
   onSelect?: (items: SelectItem[]) => void;
 };
 
-const FilterRouter = ({ selected, hideSpinner, options, name, onSelect, className }: FilterRouterProps) => {
+const FilterInputsRouter = ({ selected, hideSpinner, options, name, onSelect, className }: FilterInputsRouterProps) => {
   return (
     <Select
       name={name}
@@ -26,4 +26,4 @@ const FilterRouter = ({ selected, hideSpinner, options, name, onSelect, classNam
     />
   );
 };
-export default FilterRouter;
+export default FilterInputsRouter;
