@@ -5,7 +5,7 @@ import useSearchQueryParams from '@/hooks/useSearchQueryParams';
 import useIAsuggestions from '@/hooks/useIASuggestions';
 
 const SearchBar = () => {
-  const { query, setQuery } = useSearchQueryParams();
+  const { query, setQuery, updateQuery } = useSearchQueryParams();
   const { searchValue, setSearchValue } = useIAsuggestions(query, 300);
 
   const handleChipClick = (label: string) => {
@@ -17,6 +17,7 @@ const SearchBar = () => {
       setSearchValue([]);
     }
     setQuery(term);
+    updateQuery(term);
   };
 
   return (
